@@ -1,0 +1,30 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Install the CF CLI
+      run: |
+        wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+        echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+        sudo apt-get update
+        sudo apt-get install -y cf-cli
+
+    - name: Deploy
+      env:
+        CF_USERNAME: payments-ci-paas-user@digital.cabinet-office.gov.uk
+        CF_PASSWORD: ${{ secrets.PAAS_DEPLOY_PASSWORD }}
+      run: |
+        cf api https://api.cloud.service.gov.uk
+        cf auth
+        cf target -o govuk-pay -s sandbox
+        cf v3-create-app pay-sli-display
+        cf v3-apply-manifest -f manifest.yml
+        cf v3-zdt-push pay-sli-display --wait-for-deploy-complete
