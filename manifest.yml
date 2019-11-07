@@ -1,5 +1,5 @@
 applications:
-  - name: pay-splunk-sli-test
+  - name: pay-sli-display
     instances: 1
     memory: 64M
     disk_quota: 64M
