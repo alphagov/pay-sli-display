@@ -1,7 +1,7 @@
 This is a simple static file web application to display GOV.UK Pay service level
 indicators (SLI).
 
-Each SLI loads an iframe provided by Splunk's embedded report feature. Basic auth
+Each SLI loads an iframe provided by Splunk’s embedded report feature. Basic auth
 is provided via the `Staticfile.auth` however there is nothing here which we
 consider secret, merely some indication of our platform's performance.
 
@@ -23,7 +23,7 @@ command to deploy:
 cf push
 ```
 
-# Developing locally
+## Developing locally
 
 Make your life easy by using [BrowserSync](https://www.browsersync.io/)
 
