@@ -16,3 +16,21 @@ command to deploy:
 cf push
 ```
 
+# Developing locally
+
+Make your life easy by using [BrowserSync](https://www.browsersync.io/)
+
+Install globally and run with
+
+```
+❯ npm install -g browser-sync
+❯ browser-sync start --server --files "**/*.html"
+```
+
+Or if you think you wont do this often just execute with
+
+```
+❯ npx browser-sync start --server --files "**/*.html"
+```
+
+BrowserSync starts a mini server to serve the project and watches for any changes and reloads automatically.
