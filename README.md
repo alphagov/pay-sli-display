@@ -10,7 +10,7 @@ consider secret, merely some indication of our platform's performance.
 Each SLI is based on a report from Splunk and makes use of the [embedded scheduled
 reports](https://docs.splunk.com/Documentation/Splunk/latest/Report/Embedscheduledreports)
 feature. To update, replace or add a new report follow the instructions in the
-link above and copy the iframe code into the html page for that report.
+link above and copy the iframe code into `index.html`.
 
 
 ## Deployment
