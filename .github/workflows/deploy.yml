@@ -17,7 +17,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y cf-cli
 
-    - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
+    - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
     - name: Deploy
       env:
         CF_USERNAME: payments-ci-paas-user@digital.cabinet-office.gov.uk
