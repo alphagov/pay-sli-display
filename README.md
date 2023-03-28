@@ -1,3 +1,7 @@
+# Pay SLI Display
+
+> As of March 2023 this repository is no longer actively maintained by the GOV.UK Pay team.
+
 This is a simple static file web application to display GOV.UK Pay service level
 indicators (SLI).
 
